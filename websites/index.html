@@ -7,10 +7,20 @@
     <title>Vue project</title>
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <h1>Vue project {{ message }}</h1>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'Vuejs.org'
+            }
+        });
     </script>
 </body>
 </html>
