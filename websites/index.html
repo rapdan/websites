@@ -9,7 +9,13 @@
 <body>
     <div id="app">
 
-        <h1>Vue project {{ message }}</h1>
+        <h1>Vue project: <br>{{ message }}</h1>
+        <h2>Age: {{15 + 5.5}}</h2>
+        <h3>{{'student' ? 'I am student.' : 'I am not a student.'}}</h3>
+        <h3>{{ sayName() }}</h3>
+        <h3>Function: {{ string.split('').reverse().join('') }}</h3>
+        <input type="text" v-model='message'> 
+        <pre>{{ $data }}</pre>
 
     </div>
 
@@ -18,7 +24,16 @@
         new Vue({
             el: '#app',
             data: {
-                message: 'Vuejs.org'
+                message: 'George',
+                age: '23',
+                student: true,
+                name: 'Anna',
+                string: 'My name is George'
+            },
+            methods: {
+                sayName: function(){
+                    return 'My name is ' + this.name + '. '
+                }
             }
         });
     </script>
