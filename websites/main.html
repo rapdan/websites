@@ -16,6 +16,9 @@
             <input type="text" :value="name">
         </p>
         <p v-html="markup"></p>
+        <h3 @mouseover="onHover">Licznik: {{ilosc}}</h3>
+        <button v-on:click="addLicznik">+1</button> <!-- //wywolanie funkcji addLicznik -->
+        <button v-on:click="ilosc--">-1</button> <!-- //krotki zapis -->
 
     </div>
 
@@ -28,12 +31,27 @@
                 student: false,
                 name: 'Daniel',
                 url: 'http://google.com',
-                markup: '<a href="https://google.com">Google</a>'
+                markup: '<a href="http://google.com">Google</a>',
+                ilosc: 0
             },
             methods: {
                 say: function(){
                 return 'Moje imię: ' + this.name
-            }}
+                },
+
+                addLicznik: function(){
+                    this.ilosc++
+                },
+
+                minus: function(){
+                    this.ilosc--        //funkcja nie wykorzystana
+                },
+
+                onHover: function(event){
+                    event.target.style.color="Green" //zmienia kolor przy najechaniu myszka
+                }
+            
+            }
         });
     </script>
 </body>
