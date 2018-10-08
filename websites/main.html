@@ -16,9 +16,11 @@
             <input type="text" :value="name">
         </p>
         <p v-html="markup"></p>
-        <h3 @mouseover="onHover">Licznik: {{ilosc}}</h3>
-        <button v-on:click="addLicznik">+1</button> <!-- //wywolanie funkcji addLicznik -->
+        <h3 @mouseover="onHover">{{ title }}: {{ ilosc }}</h3>
+        <button v-on:click="addLicznik(5, 'ostatnia zmiana (5)', $event)">+5</button> <!-- //wywolanie funkcji addLicznik -->
+        <button v-on:click="addLicznik(10, 'ostatnia zmiana (10)', $event)">+10</button>
         <button v-on:click="ilosc--">-1</button> <!-- //krotki zapis -->
+        <button v-on:click="addLicznik(-5, 'odjęto 5 punktów', $event)">-5</button>
 
     </div>
 
@@ -32,15 +34,22 @@
                 name: 'Daniel',
                 url: 'http://google.com',
                 markup: '<a href="http://google.com">Google</a>',
-                ilosc: 0
+                ilosc: 0,
+                title: 'Licznik'
             },
             methods: {
                 say: function(){
                 return 'Moje imię: ' + this.name
                 },
 
-                addLicznik: function(){
-                    this.ilosc++
+                addLicznik: function(num, tekscik, event){
+                    this.ilosc += num;
+                    this.title = tekscik
+                    if (this.ilosc < 0){
+                        event.target.style.color="red"
+                    }else if (this.ilosc > 0){
+                        event.target.style.color="black"
+                    }
                 },
 
                 minus: function(){
