@@ -20,8 +20,15 @@
         <h4 v-if="char==='a'">A pierwszy akapit. Możesz także wpisać: b, c, d lub e.</h4>
         <h4 v-else-if="char==='b'">B drugi akapit</h4>
         <h4 v-else-if="char==='c'">C trzeci akapit</h4>
-        <h4 v-else-if="char==='d'">D akapit</h4>
-        <h4 v-else-if="char==='e'">E akapit</h4>
+        <template v-else-if="char==='d'">
+            <h4 >D akapit</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, repudiandae. </p>
+        </template>
+        
+        <template v-else-if="char==='e'">   
+            <h4>E akapit</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, veniam.</p>
+        </template>
         <h4 v-else>Pozostale warianty</h4>
         <input type="text" v-model="char">
     </div>
