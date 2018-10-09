@@ -24,13 +24,23 @@
             <h4 >D akapit</h4>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, repudiandae. </p>
         </template>
-        
         <template v-else-if="char==='e'">   
-            <h4>E akapit</h4>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, veniam.</p>
+            <h4 style="color:rgb(226, 43, 43)">E akapit</h4>
+            <p style="color:rgb(226, 43, 43)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, veniam.</p>
         </template>
         <h4 v-else>Pozostale warianty</h4>
         <input type="text" v-model="char">
+        <ul>
+            <li>{{man[0].name}}</li>
+            <li>{{man[1].name}}</li>
+            <li>{{man[2].name}}</li>
+            <li>{{man[3].name}}</li>
+        </ul>
+        <ul>
+            <li v-for="any in man">{{any}}</li>
+            <li v-for="(any, index) in man">{{index+1}} {{any.name}} <b>{{any.age}}</b></li>
+        </ul>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script>
@@ -40,7 +50,12 @@
                 tekst: 'Initial',
                 message: '',
                 pstryk: true,
-                char: 'a'
+                char: 'a',
+                man: [  {name:'Felix', age: 23}, 
+                        {name: 'Anna', age: 25},
+                        {name: 'Jakob', age: 33},
+                        {name:'Sylvia', age: 32}
+                ]
             },
             methods: {
 
