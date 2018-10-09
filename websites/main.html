@@ -21,6 +21,11 @@
         <button v-on:click="addLicznik(10, 'ostatnia zmiana (10)', $event)">+10</button>
         <button v-on:click="ilosc--">-1</button> <!-- //krotki zapis -->
         <button v-on:click="addLicznik(-5, 'odjęto 5 punktów', $event)">-5</button>
+        
+        <h2><a href="http://100pa.com" target="_blank" v-on:click.once>100pa.com</a> <a v-on:click.once="ilosc-=100">odejmij 100</a></h2>
+        <div>
+            <input type="text" @keyup.enter="alertInfo">
+        </div>
 
     </div>
 
@@ -58,6 +63,10 @@
 
                 onHover: function(event){
                     event.target.style.color="Green" //zmienia kolor przy najechaniu myszka
+                },
+
+                alertInfo: function(event){
+                    alert(event.target.value)
                 }
             
             }
