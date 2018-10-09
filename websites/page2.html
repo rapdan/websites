@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Podwojne wiazania danych</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model.lazy="tekst"><input v-model="tekst" placeholder="edit me">
+        <h4>{{ tekst }}</h4>
+        <h4 v-if="pstryk">Dyrektywa v-if i v-else, usuwa calkowicie z DOM</h4>
+        <h4 v-else>Mozna stosować też dwa razy v-if z negacją</h4>
+        
+        <h4 v-show="pstryk">Dyrektywa v-show ukrywa elementy z DOM za pomoca display: none.</h4>
+        <h4 v-show="!pstryk">v-if usuwa z DOM a v-show ukrywa.</h4>
+        <button @click="pstryk = !pstryk">Toogle</button>
+
+        <h4 v-if="char==='a'">A pierwszy akapit. Możesz także wpisać: b, c, d lub e.</h4>
+        <h4 v-else-if="char==='b'">B drugi akapit</h4>
+        <h4 v-else-if="char==='c'">C trzeci akapit</h4>
+        <h4 v-else-if="char==='d'">D akapit</h4>
+        <h4 v-else-if="char==='e'">E akapit</h4>
+        <h4 v-else>Pozostale warianty</h4>
+        <input type="text" v-model="char">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+    var app = new Vue({
+            el: '#app',
+            data: {
+                tekst: 'Initial',
+                message: '',
+                pstryk: true,
+                char: 'a'
+            },
+            methods: {
+
+            }
+    })
+    </script>
+</body>
+</html>
