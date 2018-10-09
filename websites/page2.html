@@ -40,6 +40,10 @@
             <li v-for="any in man">{{any}}</li>
             <li v-for="(any, index) in man">{{index+1}} {{any.name}} <b>{{any.age}}</b></li>
         </ul>
+        <span v-for="n in 20">{{ n }}, </span>
+        <ul>
+            <li v-for="(value, key, index) in person"><b>{{index+1}}. {{key}}</b> : {{value}}</li>
+        </ul>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -55,7 +59,12 @@
                         {name: 'Anna', age: 25},
                         {name: 'Jakob', age: 33},
                         {name:'Sylvia', age: 32}
-                ]
+                ],
+                person: {
+                    name: 'Aleksander',
+                    age: 43,
+                    jobb: 'electric'
+                }
             },
             methods: {
 
