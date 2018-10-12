@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // import App from './App.vue'
-Vue.component('my-counter', {
+var component = {
   template: `
   <div>
     <h3>Ilość: {{ counter }}</h3>
@@ -18,9 +18,20 @@ Vue.component('my-counter', {
       this.counter+=(num)
     }
   }
-})
+}
 
 new Vue({
   el: '#app',
   // render: h => h(App)
+  components: {
+    myCounter: component
+  }
+})
+
+new Vue({
+  el: '#app2',
+  // render: h => h(App)
+  components: {
+    myCounter: component
+  }
 })
