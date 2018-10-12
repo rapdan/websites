@@ -15,14 +15,14 @@
             <button v-if="count <= 30">Send</button>
         </form>
         <h3 ref="heading">{{ title }}</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque dicta quas ullam aperiam ut corrupti dolorum ea eveniet molestiae minus.</p>
+        <p> {{ newField }}</p>
         <button @click="changeTitle">Change</button>
     </div>
 
     <hr>
 
     <div id="app2">
-        <h3>{{ title }}</h3>
+        <h3>{{ title2 }}</h3>
         <button @click="changeTitleOne">Change Titel One</button>
     </div>
 
@@ -32,14 +32,20 @@
             el: '#app',
             data: {
                 textValue: '',
-                title: 'Product title'
+                title: 'Product title',
+                newField: ''
             },
             methods: {
                 changeTitle: function(){
                     this.title = 'New Product'
                     this.$refs.heading.style.color = "blue"
                     console.log(document.querySelector('h1'))
+                },
+                
+                alertTest: function(){
+                    alert('I am from app1')
                 }
+                
             },
             computed: {
                 count: function() {
@@ -54,14 +60,21 @@
 
         });
 
+        //consol.log(vue1)
+        //vue1.newField = 'Test'
+
         new Vue({
             el: '#app2',
             data: {
-                title: 'Title to'
+                title2: 'Title to'
             },
             methods: {
                 changeTitleOne: function(){
                     vue1.title = 'Zupelnie nowy tytul zmieniony z Vue app2'
+                    vue1.newField = 'Zmienione pole newField'
+                    setTimeout(function(){
+                        vue1.alertTest()
+                    },1000)
                 }
             }
         });
