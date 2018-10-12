@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <h2>{{ msg }}</h2>
-    <app-pizza></app-pizza>
+    <h2>Parent:  {{ pizzaName }}</h2>
+    <app-pizza :pizzaName="pizzaName" :pizzaPrice="pizzaPrice"></app-pizza>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Vue.js App'
+      pizzaName: 'Wiejska z App.vue',
+      pizzaPrice: 300
     }
   },
   components: {
