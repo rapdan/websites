@@ -7,21 +7,39 @@
     <title>Vue.js</title>
 </head>
 <body>
-    <div id="app">
 
+    <div id="app">
         <form action="">
             <span>{{ count }}/30</span>
             <textarea  v-model="textValue"></textarea>
             <button v-if="count <= 30">Send</button>
         </form>
-
+        <h3 ref="heading">{{ title }}</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque dicta quas ullam aperiam ut corrupti dolorum ea eveniet molestiae minus.</p>
+        <button @click="changeTitle">Change</button>
     </div>
+
+    <hr>
+
+    <div id="app2">
+        <h3>{{ title }}</h3>
+        <button @click="changeTitleOne">Change Titel One</button>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
-        new Vue({
+        var vue1 = new Vue({
             el: '#app',
             data: {
-                textValue: ''
+                textValue: '',
+                title: 'Product title'
+            },
+            methods: {
+                changeTitle: function(){
+                    this.title = 'New Product'
+                    this.$refs.heading.style.color = "blue"
+                    console.log(document.querySelector('h1'))
+                }
             },
             computed: {
                 count: function() {
@@ -35,6 +53,19 @@
             }
 
         });
+
+        new Vue({
+            el: '#app2',
+            data: {
+                title: 'Title to'
+            },
+            methods: {
+                changeTitleOne: function(){
+                    vue1.title = 'Zupelnie nowy tytul zmieniony z Vue app2'
+                }
+            }
+        });
+
     </script>
 </body>
 </html>
