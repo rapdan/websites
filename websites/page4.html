@@ -10,7 +10,6 @@
 <style>
     .large { font-size: 40px;
                 color:blueviolet;
-                background-color: bisque;
                 padding: 5px 20px;
             }
     .border { border: 2px solid blueviolet;
@@ -25,11 +24,12 @@
     </div>
     <div id="app2">
         <h3>Zmiana właściwości Css</h3>
-        <button :class="getCss">{{ titleButton }}</button>
+        <button :class="getCss" :style="getStyle">{{ titleButton }}</button>
         <ul>
             <li><input type="checkbox" v-model="fontSize"><label for="">Font Size</label></li>
             <li><input type="checkbox" v-model="border"><label for="">Border</label></li>
-
+            <li><input type="text" v-model="bgColor"><label for="">Background Color</label></li>
+            <li><input type="range" v-model="range"><label for="">Range</label></li>
         </ul>
     </div>
 
@@ -48,13 +48,22 @@
             data: {
                 titleButton: 'Test button',
                 fontSize: false,
-                border: false
+                border: false,
+                bgColor: 'yellow',
+                range: 20
+
             },
             computed: {
                 getCss() {
                     return {
                         'large': this.fontSize,
                         'border': this.border
+                    }
+                },
+                getStyle() {
+                    return {
+                        'background-color': this.bgColor,
+                        'margin-left': this.range + '%'
                     }
                 }
             }
