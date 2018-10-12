@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <h3>Info: {{ myinfo }}</h3>
@@ -17,12 +19,14 @@
         </p>
         <p v-html="markup"></p>
         <h3 @mouseover="onHover">{{ title }}: {{ ilosc }}</h3>
-        <button v-on:click="addLicznik(5, 'ostatnia zmiana (5)', $event)">+5</button> <!-- //wywolanie funkcji addLicznik -->
+        <button v-on:click="addLicznik(5, 'ostatnia zmiana (5)', $event)">+5</button>
+        <!-- //wywolanie funkcji addLicznik -->
         <button v-on:click="addLicznik(10, 'ostatnia zmiana (10)', $event)">+10</button>
         <button v-on:click="ilosc--">-1</button> <!-- //krotki zapis -->
         <button v-on:click="addLicznik(-5, 'odjęto 5 punktów', $event)">-5</button>
-        
-        <h2><a href="http://100pa.com" target="_blank" v-on:click.once>100pa.com</a> <a v-on:click.once="ilosc-=100">odejmij 100</a></h2>
+
+        <h2><a href="http://100pa.com" target="_blank" v-on:click.once>100pa.com</a> <a v-on:click.once="ilosc-=100">odejmij
+                100</a></h2>
         <div>
             <input type="text" @keyup.enter="alertInfo">
         </div>
@@ -43,34 +47,35 @@
                 title: 'Licznik'
             },
             methods: {
-                say: function(){
-                return 'Moje imię: ' + this.name
+                say: function () {
+                    return 'Moje imię: ' + this.name
                 },
 
-                addLicznik: function(num, tekscik, event){
+                addLicznik: function (num, tekscik, event) {
                     this.ilosc += num;
                     this.title = tekscik
-                    if (this.ilosc < 0){
-                        event.target.style.color="red"
-                    }else if (this.ilosc > 0){
-                        event.target.style.color="black"
+                    if (this.ilosc < 0) {
+                        event.target.style.color = "red"
+                    } else if (this.ilosc > 0) {
+                        event.target.style.color = "black"
                     }
                 },
 
-                minus: function(){
+                minus: function () {
                     this.ilosc--        //funkcja nie wykorzystana
                 },
 
-                onHover: function(event){
-                    event.target.style.color="Green" //zmienia kolor przy najechaniu myszka
+                onHover: function (event) {
+                    event.target.style.color = "Green" //zmienia kolor przy najechaniu myszka
                 },
 
-                alertInfo: function(event){
+                alertInfo: function (event) {
                     alert(event.target.value)
                 }
-            
+
             }
         });
     </script>
 </body>
+
 </html>

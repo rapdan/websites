@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue project</title>
 </head>
+
 <body>
     <div id="app">
 
@@ -14,7 +16,7 @@
         <h3>{{'student' ? 'I am student.' : 'I am not a student.'}}</h3>
         <h3>{{ sayName() }}</h3>
         <h3>Function: {{ string.split('').reverse().join('') }}</h3>
-        <input type="text" v-model='message'> 
+        <input type="text" v-model='message'>
         <pre>{{ $data }}</pre>
         <h3 v-bind:title="tips">Hover your mouse over me for a few seconds to see my dynamically bound title!</h3>
 
@@ -33,11 +35,12 @@
                 tips: 'You loaded this page on ' + new Date().toLocaleString()
             },
             methods: {
-                sayName: function(){
+                sayName: function () {
                     return 'My name is ' + this.name + '. '
                 }
             }
         });
     </script>
 </body>
+
 </html>
