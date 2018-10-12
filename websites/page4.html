@@ -7,10 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue.js template</title>
 </head>
+<style>
+    .large { font-size: 40px;
+                color:blueviolet;
+                background-color: bisque;
+                padding: 5px 20px;
+            }
+    .border { border: 2px solid blueviolet;
+                border-radius: 5px;
+                padding: 5px 20px;
+            }
+</style>
 
 <body>
     <div id="app">
 
+    </div>
+    <div id="app2">
+        <h3>Zmiana właściwości Css</h3>
+        <button :class="getCss">{{ titleButton }}</button>
+        <ul>
+            <li><input type="checkbox" v-model="fontSize"><label for="">Font Size</label></li>
+            <li><input type="checkbox" v-model="border"><label for="">Border</label></li>
+
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,7 +42,26 @@
             template: '<div><h3>{{ title }}</h3><p>W skrypcie nie ma odwołania do el: #app. Jest natomiast vue.$mount() Wszystko musi być zamknięte w jednym elemencie np. div</p><p>Dla formatowania kodu w vs code nacinij: <b>shfit + alt + f</b></p></div>'
         });
 
+        
+        var vue2 = new Vue({
+            el: '#app2',
+            data: {
+                titleButton: 'Test button',
+                fontSize: false,
+                border: false
+            },
+            computed: {
+                getCss() {
+                    return {
+                        'large': this.fontSize,
+                        'border': this.border
+                    }
+                }
+            }
+        }); 
+
         vue.$mount('#app')
+
     </script>
 </body>
 
