@@ -7,10 +7,16 @@
 
 <script>
 export default {
-    props: ['pizzaName', 'pizzaPrice'],
+    props: {pizzaName: {
+      type: String,
+      //requaired: true,
+      default: 'Pizza Default'
+    }, 
+    pizzaPrice: Number
+    },
     computed:{
       reverseName(){
-        return this.pizzaName.split('').reverse().join()
+        return this.pizzaName.split('').reverse().join('')
       }
     }
     }
