@@ -2,6 +2,7 @@
   <div>
     <h2>Pizza: {{ pizzaName }} / {{ reverseName }}</h2>
     <p>Price: {{ pizzaPrice }}kr</p>
+    <button @click="changeName">Change Name</button>
   </div>
 </template>
 
@@ -11,8 +12,13 @@ export default {
       type: String,
       //requaired: true,
       default: 'Pizza Default'
-    }, 
-    pizzaPrice: Number
+      }, 
+      pizzaPrice: Number
+    },
+    methods: {changeName() {
+        this.pizzaName = 'Margarita',
+        this.$emit('nameChanged', this.pizzaName)
+      }
     },
     computed:{
       reverseName(){
