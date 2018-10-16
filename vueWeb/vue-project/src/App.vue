@@ -1,12 +1,17 @@
 <template>
   <div id="app">
     <h2>Parent:  {{ pizzaName }}</h2>
-    <app-pizza :pizzaName="pizzaName" :pizzaPrice="pizzaPrice" :changeFunc="changeNameToPizza" @nameChanged="pizzaName = $event"></app-pizza>
+    <app-pizza :pizzaName="pizzaName" :pizzaPrice="pizzaPrice" 
+    :changeFunc="changeNameToPizza" 
+    @nameChanged="pizzaName = $event" 
+    @counterUpdated="counter=$event"></app-pizza>
+    <app-counter></app-counter>
   </div>
 </template>
 
 <script>
 import Pizza from './Pizza.vue'
+import Counter from './Counter.vue'
 export default {
   name: 'app',
   data () {
@@ -21,7 +26,8 @@ export default {
     }
   },
   components: {
-    appPizza: Pizza
+    appPizza: Pizza,
+    appCounter: Counter
   }
 }
 </script>
