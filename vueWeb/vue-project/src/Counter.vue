@@ -1,5 +1,9 @@
 <template>
-    <h3>Licznik: {{ counter }}</h3>
+    <div>
+        <p>Modul zliczajacy pizze:</p>
+        <h3>Licznik: {{ counter }}</h3>
+        <p>Pizza dla dobrych ludzi za darmo!</p>
+    </div>
 </template>
 
 <script>

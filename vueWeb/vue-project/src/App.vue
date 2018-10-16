@@ -6,12 +6,17 @@
     @nameChanged="pizzaName = $event" 
     @counterUpdated="counter=$event"></app-pizza>
     <app-counter></app-counter>
+    <app-wyglad>
+      <h2 slot="title"> {{ pizzaName }}</h2>
+      <p slot="text"> Bardzo dobra pizza </p>
+    </app-wyglad>
   </div>
 </template>
 
 <script>
 import Pizza from './Pizza.vue'
 import Counter from './Counter.vue'
+import Wyglad from './Wyglad.vue'
 export default {
   name: 'app',
   data () {
@@ -27,7 +32,8 @@ export default {
   },
   components: {
     appPizza: Pizza,
-    appCounter: Counter
+    appCounter: Counter,
+    appWyglad: Wyglad
   }
 }
 </script>
