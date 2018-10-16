@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Pizza: {{ pizzaName }} / {{ reverseName }}</h2>
+    <h3>Pizza: {{ pizzaName }} / {{ reverseName }}</h3>
     <p>Price: {{ pizzaPrice }}kr</p>
     <button @click="changeName">Change Name</button>
     <button @click="changeFunc()">Change pizza</button>
@@ -28,3 +28,9 @@ export default {
     }
     }
 </script>
+
+<style>
+  p {
+    background-color: burlywood;
+  }
+</style>

@@ -17,3 +17,7 @@ export default {
     }
 }
 </script>
+<style>
+    h3 {background-color: greenyellow;
+    border: 1px solid green;}
+</style>
