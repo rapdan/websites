@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2 v-colored>{{ msg }}</h2>
+    <h2 v-colored="'purple'">{{ msg }}</h2>
   </div>
 </template>
 
