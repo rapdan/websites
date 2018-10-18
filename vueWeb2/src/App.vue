@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <h2 v-colored="'purple'">{{ msg }}</h2>
+    <h2 v-colored:background="'#454545'" v-colored:color="'#eee'">{{ msg }}</h2>
+    <h2 v-colored:font-size="'30px'" v-colored:background="'#952525'" v-colored:color="'#fff'">{{ msg }}</h2>
   </div>
 </template>
 
