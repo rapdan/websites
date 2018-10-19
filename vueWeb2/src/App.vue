@@ -7,6 +7,10 @@
     <h2>{{ msg | uppercase }}</h2>
     <h2>{{ msg | dodaj }}</h2>
     <h2>{{ msg | dodaj | uppercase }}</h2>
+    <input type="text" v-model="search">
+    <ul>
+      <li v-for="name in filteredNames" :key="name">{{ name }}</li>
+    </ul>
   </div>
 </template>
 
@@ -15,7 +19,16 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Dyrektywy'
+      msg: 'Dyrektywy',
+      search: '',
+      names: ['Darek', 'Jarek', 'Zosia', 'Gosia']
+    }
+  },
+  computed: {
+    filteredNames () {
+      return this.names.filter(name => {
+        return name.toLowerCase().indexOf(this.search) !== -1
+      })
     }
   },
   filters: {
