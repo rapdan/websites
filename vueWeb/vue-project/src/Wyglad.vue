@@ -7,13 +7,11 @@
 </template>
 
 <script>
-export default {
-   
-    }
+export default {};
 </script>
 
 <style scoped>
-  p {
-    background-color: red;
-  }
+p {
+  background-color: red;
+}
 </style>

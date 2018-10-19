@@ -9,28 +9,30 @@
 </template>
 
 <script>
-import {eventEmitter} from './main'
+import { eventEmitter } from "./main";
 export default {
-    props: ['pizzaName', 'pizzaPrice', 'changeFunc'],
-    methods: {
-      changeName() {
-        this.pizzaName = 'Margarita',
-        this.$emit('nameChanged', this.pizzaName)
-      },
-      updateCounter () {
-        eventEmitter.$emit('counterUpdated', 2)
-      }
+  props: ["pizzaName", "pizzaPrice", "changeFunc"],
+  methods: {
+    changeName() {
+      (this.pizzaName = "Margarita"), this.$emit("nameChanged", this.pizzaName);
     },
-    computed:{
-      reverseName(){
-        return this.pizzaName.split('').reverse().join('')
-      }
+    updateCounter() {
+      eventEmitter.$emit("counterUpdated", 2);
     }
+  },
+  computed: {
+    reverseName() {
+      return this.pizzaName
+        .split("")
+        .reverse()
+        .join("");
     }
+  }
+};
 </script>
 
 <style scoped>
-  p {
-    background-color: burlywood;
-  }
+p {
+  background-color: burlywood;
+}
 </style>

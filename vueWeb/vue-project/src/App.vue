@@ -14,20 +14,20 @@
 </template>
 
 <script>
-import Pizza from './Pizza.vue'
-import Counter from './Counter.vue'
-import Wyglad from './Wyglad.vue'
+import Pizza from "./Pizza.vue";
+import Counter from "./Counter.vue";
+import Wyglad from "./Wyglad.vue";
 export default {
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      pizzaName: 'Wiejska z App.vue',
+      pizzaName: "Wiejska z App.vue",
       pizzaPrice: 300
-    }
+    };
   },
   methods: {
-    changeNameToPizza(){
-      this.pizzaName='Pizza'
+    changeNameToPizza() {
+      this.pizzaName = "Pizza";
     }
   },
   components: {
@@ -35,12 +35,12 @@ export default {
     appCounter: Counter,
     appWyglad: Wyglad
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: left;
@@ -48,7 +48,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
