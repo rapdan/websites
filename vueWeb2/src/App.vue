@@ -2,8 +2,7 @@
   <div id="app">
     <h2 v-colored:background="'#454545'" v-colored:color="'#eee'">{{ msg }}</h2>
     <h2 v-colored:font-size="'30px'" v-colored:background="'#952525'" v-colored:color="'#fff'">{{ msg }}</h2>
-    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis harum quibusdam quas sunt maxime 
-      unde illum consequuntur cupiditate ab iste.</p>
+    <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis harum quibusdam quas sunt maxime unde illum consequuntur cupiditate ab iste.</p>
     <h2>{{ msg | uppercase }}</h2>
     <h2>{{ msg | dodaj }}</h2>
     <h2>{{ msg | dodaj | uppercase }}</h2>
