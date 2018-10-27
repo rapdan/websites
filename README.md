@@ -1,2 +1,2 @@
 # websites
-This is test Vue files. 
+Nothing interesting, just practicing with the Vue project. 
